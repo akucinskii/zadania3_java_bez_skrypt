@@ -1,0 +1,21 @@
+
+1. synchronized:
+   Co robi? Używane do blokowania metod lub bloków kodu, aby tylko jeden wątek mógł je wykonywać w danym momencie.
+   Kiedy używać? Gdy potrzeba prostego sposobu na zabezpieczenie sekcji kodu przed równoczesnym dostępem wielu wątków.
+   Przykład: `synchronized (this) { // kod krytyczny }`
+
+2. ReentrantLock:
+   Co robi? Podobnie jak synchronized, ale daje więcej kontroli, np. można zablokować i odblokować w różnych miejscach kodu.
+   Kiedy używać? Gdy potrzebuja więcej funkcji niż daje synchronized, np. sprawdzanie, czy zamek jest dostępny, lub odblokowywanie w innej metodzie.
+   Przykład: `lock.lock(); // kod krytyczny; lock.unlock();`
+
+3. ReadWriteLock:
+   Co robi? Umożliwia jednoczesne czytanie przez wiele wątków, ale tylko jeden wątek może pisać w danym czasie.
+   Kiedy używać? Gdy jest dużo operacji odczytu i rzadkie operacje zapisu, co pozwala na większą równoczesność.
+   Przykład: `readLock.lock(); // kod odczytu; readLock.unlock();` oraz `writeLock.lock(); // kod zapisu; writeLock.unlock();`
+
+4. Semaphore:
+   Co robi? Kontroluje dostęp do ograniczonej liczby zasobów. Pozwala określonej liczbie wątków na jednoczesne wykonanie kodu.
+   Kiedy używać? Gdy potrzeba ograniczyć liczbę wątków wykonujących sekcję kodu, np. tylko 3 wątki mogą jednocześnie korzystać z zasobu.
+   Przykład: `semaphore.acquire(); // kod krytyczny; semaphore.release();`
+

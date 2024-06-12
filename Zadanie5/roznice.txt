@@ -1,0 +1,4 @@
+
+volatile: Gwarantuje, że zmiana wartości zmiennej jest natychmiast widoczna dla wszystkich wątków, bez synchronizacji.
+Atomic: Zapewnia bezpieczne dla wątków operacje na zmiennych (np. `AtomicInteger`) bez konieczności stosowania blokad.
+3ThreadLocal: Przechowuje zmienne, które są unikalne dla każdego wątku, zapewniając każdemu wątkowi własną, oddzielną kopię.
